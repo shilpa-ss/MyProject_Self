@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyProject.Data;
 
 namespace MyProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200929070135_InitialModel")]
+    partial class InitialModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -268,14 +270,6 @@ namespace MyProject.Data.Migrations
                             ImageName = "Choco_Donut.jpg",
                             Name = "Donut",
                             Price = 25.5f
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Made with Ginger",
-                            ImageName = "Ginger-Biscuit.jpg",
-                            Name = "Ginger-Biscuit",
-                            Price = 28f
                         });
                 });
 
